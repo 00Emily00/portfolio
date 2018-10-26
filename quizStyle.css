@@ -1,0 +1,45 @@
+.homepage{
+    background-image: url("animalbackground2\ copy.jpg");
+}
+.quiz_page {
+    background-color: lightgreen;
+}
+h1, h2 {
+    text-align: center;
+    font-family: fantasy;
+    color: rgb(84, 86, 211);
+}
+#after_submit {
+    visibility: hidden;
+}
+div img {
+    width: 25em;
+}
+#button {
+    padding: 15px 25px;
+    font-size: 24px;
+    margin-top: 2em;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: blue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+#button:hover {
+      background-color: purple
+}
+ 
+  input[type='radio'] { transform: scale(1.5); }
+
+p {
+    font-size: 1.5em;
+    display: inline;
+}
+#submitButton {
+    
+
+}
