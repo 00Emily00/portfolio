@@ -258,40 +258,6 @@ function validateForm() {
         return false;
     }
 }
-    // for(let i = 0; i <= quiz_questions.length - 1; i++) {
-
-    //     let quizAnswers = document.forms[i][quiz_questions.choices];
-
-    //     console.log(quizAnswers);
-    // }
-
-    //     document.getElementById("after_submit").style.visibility = "visible";
-
-    //      document.getElementById("button").innerHTML = "You got " + userAnswers + " correct.";
-        // let quizRadio = document.forms[0];
-        // let correct= 0;
-        // for (let i = 0; i < quizRadio.length - 1; i++){
-        //     if(quizRadio[i].checked) {
-        //         correct = correct + quizRadio[i];
-        //     }
-        // }
-    // let correct = 0;
-    // //  for (let i = 0; i <= quiz_questions; i++) {
-    //     if(checked = true)
-    //     {
-    //         document.forms[quiz_questions][quiz_questions.name[i]];
-    //         console.log(document.forms[quiz_questions][quiz_questions.name[i]]);
-    //     }
-    // }
-
-    // for(let i = )
-    // if (quiz_questions.choices == quiz_questions.correct) {
-    //     correct++;
-
-    // console.log(correct);
-   // }
-
-
 
 
 
