@@ -4,10 +4,11 @@
 .quiz_page {
     background-color: lightgreen;
 }
-h1, h2 {
+h1, h2, h3 {
     text-align: center;
     font-family: fantasy;
-    color: rgb(84, 86, 211);
+    color: black;
+    background-color: antiquewhite;
 }
 #after_submit {
     visibility: hidden;
@@ -46,6 +47,7 @@ p {
     padding: 1em;
     background-color: lightblue;
     border-radius: 1.5em;
+    text-align: center;
 
 }
 #results {
@@ -53,5 +55,20 @@ p {
     font-family: fantasy;
 
 }
-  
-  
+input {
+    text-align: left;
+    font-size: .5%;
+    display: inline-block;
+}
+
+#submitButton {
+    border: double;
+    color: royalblue;
+    font-size: 1.5em;
+    margin-top: .5em;
+}
+#goHome {
+    border: double;
+    color: royalblue;
+    margin-bottom: 1.5em;
+}

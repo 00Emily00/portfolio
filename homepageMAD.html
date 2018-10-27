@@ -16,28 +16,16 @@
     <h3>Input your contact information below</h3>
     
     <form action="quizMAD.html">
-            <!-- <button type="submit">Click Here to Play!</button> -->
-        </form>
+    </form>
 
-        <form class="userInformation" name="myForm" action="quizMAD.html"
-onsubmit="return validateForm()" method="GET">
-First Name: <input type="text" id="fname" name="fname"><br><br>
-Last Name: <input type="text" id="lname" name="lname"><br><br>
-email: <input type="text" id="email" name="email"><br><br>
-<input type="submit" value="Submit">
-<!-- <button type="submit" formaction="quizMAD.html">Click Here to Play!</button> -->
-
-
-
+<form class="userInformation" method="GET" action="quizMAD.html" onsubmit="return validateForm(this);">
+    <p id="inputFormat">
+        First Name: <br><input type="text" name="fname"><br>
+        Last Name: <br><input type="text" name="lname"><br>
+        Email: <br><input type="text" name="email"><br>
+        <input type="submit" value="Quiz Me!" id="submitButton">
+    </p>
 </form>
-<!--
-    <div class="boy">
-    <img src="images.jpg">
-    </div>
-    
-    <div class="monkey">
-    <img src="monkey.jpg">
-    </div>
--->
+
 </body>
 </html>

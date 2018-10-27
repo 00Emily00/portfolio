@@ -192,17 +192,27 @@ const quiz_questions = [
 
 
 ];
-
+/*********************************
+ * Author: Emily Barrera
+ * This function creates a template
+ * literal
+**********************************/
 function createQuestion(quiz_question) {
 
     const question = document.createElement('div'); //this creates an empty element
+
+    //Template Literal(template string)
     question.innerHTML = `<img src="${quiz_question.question}">
-    <input class="mc" type="radio" name="${quiz_question.name}" value="${quiz_question.choices.a}"><p>${quiz_question.choices.a}</p><br>
-    <input class="mc" type="radio" name="${quiz_question.name}" value="${quiz_question.choices.b}"><p>${quiz_question.choices.b}</p><br>
-    <input class="mc" type="radio" name="${quiz_question.name}" value="${quiz_question.choices.c}"><p>${quiz_question.choices.c}</p>`
+    <input class="mc" type="radio" name="${quiz_question.name}" value="${quiz_question.choices.a}"><p id="radiobt">${quiz_question.choices.a}</p><br>
+    <input class="mc" type="radio" name="${quiz_question.name}" value="${quiz_question.choices.b}"><p id="radiobt">${quiz_question.choices.b}</p><br>
+    <input class="mc" type="radio" name="${quiz_question.name}" value="${quiz_question.choices.c}"><p id="radiobt">${quiz_question.choices.c}</p>`
     return question;
 }
-
+/*********************************
+ * Author: Emily Barrera
+ * This function gets the JSON 
+ * objects
+**********************************/
 function getElements() {
     const quizElement = document.getElementById("quiz");
 
@@ -210,26 +220,94 @@ function getElements() {
         quizElement.appendChild(createQuestion(quiz_questions[i]));
     }
 }
-
 getElements();
 
 console.log(quiz_questions[2]);
+/*********************************
+ * Author: Emily Barrera
+ * This function validates the
+ * user input
+**********************************/
+function validateForm(form) {
+    //should only contain letters
+    let re = /^[a-zA-Z]*$/; 
 
+    //validate email
+    let valEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
 
+    //Check if first name input is empty
+    if(form.fname.value == "") {
+        alert("First name must be filled");
+        form.fname.focus();
+        console.log("name must be filled");
+        return false;
+    }
+    // Check if first name contains numbers
+    if(!re.test(form.fname.value)) {
+        alert("Name can only contain letters")
+        form.fname.focus();
+        console.log("name must contain only letters");
+        return false;
+    }
+    //Check if last name input is empty
+    if(form.lname.value == "") {
+        alert("Last name must be filled");
+        form.lname.focus();
+        return false;
+    }
+    // Check if last name contains numbers
+    if(!re.test(form.lname.value)) {
+        alert("Last name can only contain letters")
+        form.lname.focus();
+        console.log("last name must contain only letters");
+        return false;
+    }
+    //Check if email input is empty
+    if(form.email.value == "") {
+        alert("Email must be filled");
+        form.email.focus();
+        return false;
+    }
+    //Check if input is a valid email
+    if(!valEmail.test(form.email.value)) {
+        alert("Email must be valid")
+        form.email.focus();
+        console.log("last name must contain only letters");
+        return false;
+    }
+    //Go to next page if there's not problems
+        return true;
+    
+}
+
+/*********************************
+ * Author: Emily Barrera
+ * Grades the correct answers
+**********************************/
 function gradeQuestions() {
-    let currentQuiz = document.forms[0]; //give it a variable to make it easier to understand
-    let score = 0; //keep score on correct answers
-    quiz_questions.forEach(question => { //go through the array
+    //give it a variable name to make it easier to understand
+    let currentQuiz = document.forms[0]; 
+    //keep score on correct answers
+    let score = 0; 
+    //go through the array / call check function
+    quiz_questions.forEach(question => { 
         score += check(question.correct, currentQuiz[question.name]);
     });
 
-    document.getElementById('results').innerHTML = "You got " + name + score + " correct! Congratulations!";
+    //display after button is clicked
+    document.getElementById('results').innerHTML = 
+    "You got " + score + " correct! Congratulations!<br> Keep trying until you get all of them right!";
 }
 
+/*********************************
+ * Author: Emily Barrera
+ * Checks if name = correct answer
+ * and checks if it has been selected
+**********************************/
 function check(correctAnswer, results) {
-
+    //debugging
     console.log(document.forms[0]['gorilla']);
-
+    
     for(let i = 0; i < results.length; i++) { 
         if(results[i].value == correctAnswer) {
             if(results[i].checked == true) {
@@ -241,70 +319,3 @@ function check(correctAnswer, results) {
     }
     
 }
-
-function validateForm() {
-    let name = document.forms["myForm"]["fname"].value;
-    let y = document.forms["myForm"]['lname'].value;
-    let z = document.forms['myForm']['email'].value;
-
-
-    if (name == "") {
-        alert("First name must be filled out and can't contain numbers");
-        return false;
-    }
-    else if (y == "") {
-        alert("Last name must be filled out and can't contain numbers");
-        return false;
-    }
-    else if (z == "") {
-        alert("Email must be filled out or is invalid");
-            return false;
-    }
-    else
-        return true;
-}
-
-
-
-
-
-
-
-// let _quiz = document.getElementById('quiz');
-// let _submit = document.getElementById('submit');
-// let _results = document.getElementById('results');
-
-//     // let messages = ["Great job!", "That's just okay", "You really need to do better."];
-
-//     // let range;
-
-//     //     if (correct < 1){
-//     //         range = 2;
-//     //         console.log("1 correct answers");
-//     //     }
-//     //     if (correct > 0 && correct < 3) {
-//     //         range = 1;
-//     //         console.log("2 correct answers");
-//     //     }
-//     //     if (correct > 2) {
-//     //         range = 0;
-//     //         console.log("3 correct answers");
-//     //     }
-    
-//     document.getElementById("after_submit").style.visibility = "visible";
-
-//    // document.getElementById("message").innerHTML = messages[range];
-//     document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
-// }
-// let answers = quizContainer.querySelectorAll('.${quiz_question.choices}');
-//     let userAnswers = '';
-//     let numCorrect = 0;
-
-//     for (let i = 0; i < quizQuestion.length; i++) {
-//         userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-        
-//         if(userAnswer===questions[i].correctAnswer){
-//             // add to the number of correct answers
-//             numCorrect++;
-//         }
-//     }
