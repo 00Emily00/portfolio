@@ -248,16 +248,15 @@ function validateForm() {
     let z = document.forms['myForm']['email'].value;
 
 
-    if (x == "" || x == isNaN) {
+    if (x == "") {
         alert("First name must be filled out and can't contain numbers");
-        
         return false;
     }
-    if (y == "" || x == isNaN) {
+    else if (y == "") {
         alert("Last name must be filled out and can't contain numbers");
         return false;
     }
-    else if (z == "" || z != re) {
+    else if (z == "") {
         alert("Email must be filled out or is invalid");
             return false;
     }
