@@ -223,7 +223,7 @@ function gradeQuestions() {
         score += check(question.correct, currentQuiz[question.name]);
     });
 
-    document.getElementById('results').innerHTML =  name + "You got " + score + " correct! Congratulations!";
+    document.getElementById('results').innerHTML = "You got " + name + score + " correct! Congratulations!";
 }
 
 function check(correctAnswer, results) {
