@@ -223,7 +223,7 @@ function gradeQuestions() {
         score += check(question.correct, currentQuiz[question.name]);
     });
 
-    document.getElementById('results').innerHTML = "You got " + score + " correct.";
+    document.getElementById('results').innerHTML = "You got " + score + " correct! Congratulations!";
 }
 
 function check(correctAnswer, results) {
@@ -241,22 +241,28 @@ function check(correctAnswer, results) {
     }
     
 }
+
 function validateForm() {
     let x = document.forms["myForm"]["fname"].value;
     let y = document.forms["myForm"]['lname'].value;
     let z = document.forms['myForm']['email'].value;
-    if (x == "") {
-        alert("First name must be filled out");
+
+
+    if (x == "" || x == isNaN) {
+        alert("First name must be filled out and can't contain numbers");
+        
         return false;
     }
-    if (y == "") {
-        alert("Last name must be filled out");
+    if (y == "" || x == isNaN) {
+        alert("Last name must be filled out and can't contain numbers");
         return false;
     }
-    if (z == "") {
-        alert("Email must be filled out");
-        return false;
+    else if (z == "" || z != re) {
+        alert("Email must be filled out or is invalid");
+            return false;
     }
+    else
+        return true;
 }
 
 
