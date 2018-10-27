@@ -1,4 +1,4 @@
-const quiz_questions = [
+const quiz_questions = [ //Array of objects
     { 
         question: 'gorilla.jpg',
         name: 'gorilla',
@@ -192,6 +192,7 @@ const quiz_questions = [
 
 
 ];
+
 /*********************************
  * Author: Emily Barrera
  * This function creates a template
@@ -208,6 +209,7 @@ function createQuestion(quiz_question) {
     <input class="mc" type="radio" name="${quiz_question.name}" value="${quiz_question.choices.c}"><p id="radiobt">${quiz_question.choices.c}</p>`
     return question;
 }
+
 /*********************************
  * Author: Emily Barrera
  * This function gets the JSON 

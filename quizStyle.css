@@ -19,7 +19,7 @@ div img {
 #button {
     padding: 2%;
     font-size: 24px;
-    margin-top: 2em;
+    margin-top: .5em;
     text-align: center;
     cursor: pointer;
     outline: none;
@@ -67,8 +67,3 @@ input {
     font-size: 1.5em;
     margin-top: .5em;
 }
-/* #goHome {
-    border: double;
-    color: royalblue;
-    margin-bottom: 1.5em;
-} */
