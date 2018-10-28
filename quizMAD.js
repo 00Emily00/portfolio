@@ -241,14 +241,12 @@ function validateForm(form) {
     if(form.fname.value == "") {
         alert("First name must be filled");
         form.fname.focus();
-        console.log("name must be filled");
         return false;
     }
     // Check if first name contains numbers
     if(!re.test(form.fname.value)) {
         alert("Name can only contain letters")
         form.fname.focus();
-        console.log("name must contain only letters");
         return false;
     }
     //Check if last name input is empty
@@ -261,7 +259,6 @@ function validateForm(form) {
     if(!re.test(form.lname.value)) {
         alert("Last name can only contain letters")
         form.lname.focus();
-        console.log("last name must contain only letters");
         return false;
     }
     //Check if email input is empty
@@ -274,7 +271,6 @@ function validateForm(form) {
     if(!valEmail.test(form.email.value)) {
         alert("Email must be valid")
         form.email.focus();
-        console.log("last name must contain only letters");
         return false;
     }
     //Go to next page if there's not problems
