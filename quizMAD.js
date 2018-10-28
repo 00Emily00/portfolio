@@ -240,40 +240,40 @@ function validateForm(form) {
     //Check if first name input is empty
     if(form.fname.value == "") {
         alert("First name must be filled");
-        form.fname.onfocus();
+        form.fname.click().focus();
         console.log("name must be filled");
         return false;
     }
     // Check if first name contains numbers
     if(!re.test(form.fname.value)) {
         alert("Name can only contain letters")
-        form.fname.onfocus();
+        form.fname.click().focus();
         console.log("name must contain only letters");
         return false;
     }
     //Check if last name input is empty
     if(form.lname.value == "") {
         alert("Last name must be filled");
-        form.lname.onfocus();
+        form.lname.click().focus();
         return false;
     }
     // Check if last name contains numbers
     if(!re.test(form.lname.value)) {
         alert("Last name can only contain letters")
-        form.lname.onfocus();
+        form.lname.click().focus();
         console.log("last name must contain only letters");
         return false;
     }
     //Check if email input is empty
     if(form.email.value == "") {
         alert("Email must be filled");
-        form.email.onfocus();
+        form.email.click().focus();
         return false;
     }
     //Check if input is a valid email
     if(!valEmail.test(form.email.value)) {
         alert("Email must be valid")
-        form.email.onfocus();
+        form.email.click().focus();
         console.log("last name must contain only letters");
         return false;
     }
