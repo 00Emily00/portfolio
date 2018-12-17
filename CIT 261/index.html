@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nutrition Facts</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js" async></script> 
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body onload="getFoodGroup()">
+    
+
+    <h1>Shopping List</h1>
+  
+   <form id="form" action="" method="get">
+        <input type="text" name="search" id="input">          
+        <select id="foodGroupSelect" name="foodGroupSelect"></select>
+        <button id="button" type="button" onclick="searchApi(event)">Submit</button> <!--similar to add event-->
+
+
+    </form>
+     <div id="border2">
+    <div id="food"></div>
+    </div>    
+    <div id="shoppingList"></div>
+</body>
+</html>

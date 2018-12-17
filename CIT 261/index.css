@@ -1,0 +1,44 @@
+body {
+     background-image: url("nutritionbackgroundbig.jpg");
+}
+
+h1 {
+    font-size: 6.5em;
+    color: aliceblue;
+    text-align: center;
+    
+}
+#form {
+    text-align: center;
+    padding: 1.5em;
+}
+button {
+    width: 10em;
+    height: 1.5em;
+    border-style: double;
+    font-size: 2em;
+    margin: .5em;
+}
+#input {
+    height: 1.2em;
+    font-size: 2em;
+}
+#foodGroupSelect {
+    height: 1.5em;
+    font-size: 2em;
+    border-style: double;
+}
+#border2, #shoppingList {
+    color: darkgreen;
+    border-style: solid;
+    background-color: lightyellow;
+    opacity: 0.95;
+    filter: alpha(opacity=95);
+    width: 70%;
+    padding: 5%;
+    margin: auto;
+    z-index: 1;
+}
+#shoppingList {
+    text-align: center;
+}
