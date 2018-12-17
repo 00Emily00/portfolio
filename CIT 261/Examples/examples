@@ -1,1 +1,113 @@
+CH 2. 2 FIZZBUZZ
 
+for(let i = 1; i <= 100; i++) {
+  	if (i % 3 == 0 && i % 5 == 0)
+    { console.log("FizzBuzz");}
+  	else if(i % 3 == 0)
+    { console.log("Fizz"); }
+  	else if(i % 5 == 0)
+    { console.log("Buzz") }
+  	else
+    { console.log(i); }
+}
+
+CH 3.3 BEAN COUNTING
+
+function countBs(str) {
+  var count = 0;
+  
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == 'B')
+      count++;
+  }
+  return count;
+}
+
+function countChar(str, char) {
+  var count = 0;
+  
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] == char)
+      count++;
+  }
+  return count;
+}
+
+console.log(countBs("BBC"));
+// → 2
+console.log(countChar("kakkerlak", "k"));
+// → 4
+
+Chapter 6 Groups
+
+class Group {
+	constructor() {
+      this.group = []; //anytime 'this' is used, we are referring to this array
+    }
+  	add(value) {
+      	if(!this.has(value)) {
+			this.group.push(value);
+        }
+    }
+  	delete(value) {
+      let find = this.group.indexOf(value);
+      console.log(find);
+      if(find >= 0) {
+      this.group.splice(find, 1); //where it’s starting (find) and how many (1)
+      }
+    }
+  	has(value) {
+     return this.group.includes(value);
+    }
+  	static from(arr) {
+      let group = new Group;
+      for (let value of arr) {
+      	group.add(value);
+      }
+      return group;
+    }
+  
+  	
+}
+
+let group = Group.from([10, 20]);
+console.log(group);
+console.log(group.has(10));
+// → true
+console.log(group.has(30));
+// → false
+group.add(10);
+group.delete(10);
+console.log(group);
+console.log(group.has(10));
+// → false
+
+
+Chapter 8 Retry
+
+class MultiplicatorUnitFailure extends Error {}
+
+function primitiveMultiply(a, b) {
+  if (Math.random() < 0.2) {
+    return a * b;
+  } else {
+    throw new MultiplicatorUnitFailure("Klunk");
+  }
+}
+
+function reliableMultiply(a, b) {
+	for(;;) { //;; is defining an infinite loop until there's a break
+     try {
+       return primitiveMultiply(a,b); //returning the numbers multiplied
+     }catch(error) {
+     	if(!(error instanceof MultiplicatorUnitFailure))
+        { throw error; }
+     }
+  }
+}
+//what i understand: 
+//An instanceof is to check if that object is part of that class. So on line 16
+//I'm saying that if there is no error in the MultiplicatorUnitFailture, then
+//throw an exception;
+console.log(reliableMultiply(8, 8));
+// → 64
